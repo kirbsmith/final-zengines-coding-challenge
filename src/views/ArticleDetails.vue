@@ -49,36 +49,5 @@ onBeforeMount(async() => {
         })
     }
 })
-// onBeforeMount(async() => {
-//     const url = 'https://hacker-news.firebaseio.com/v0/item/'
-//     const response = await axios.get(url + id + '.json')
-//     .then((response : any) => {
-//         articleDetails.push(response)
-//         commentDetails.push(articleDetails[0].data.kids)
-//     })
-//     for (let i = 0; i <= commentDetails[0].length; i++){
-//         const commentResponse = await axios.get(url + commentDetails[0][i] + '.json?print=pretty')
-//         .then((commentResponse : any) => {
-//             commentsLoaded.push(commentResponse)
-//             console.log(commentsLoaded[i].data.id)
-//         })
-//     }
-// })
-
-//     onMounted(async () => {
-//     const url = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty'
-//     const response = await axios.get(url)
-//     const results = response.data.slice(0, 50)
-//     results.map((id : any) => {
-//         axios.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
-//         .then((response : any) => {
-//             articles.push(response)
-//         })
-//     })
-// })
-
-function consoleTest(){
-    console.log(articleDetails)
-}
 
 </script>
