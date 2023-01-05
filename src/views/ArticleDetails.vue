@@ -23,7 +23,7 @@ let articleDetails: (any)[] = reactive([])
 let commentDetails: (any)[] = reactive([])
 let commentsLoaded: (any)[] = reactive([])
 let commentsFinal: (any)[] = reactive([])
-
+//test
 
 const route = useRoute()
 
