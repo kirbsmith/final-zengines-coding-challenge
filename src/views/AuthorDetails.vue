@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-lightgray text-center font-montserrat border-b-2 border-black pb-6">
+    <div class="bg-lightgray dark:bg-slate-700 text-center font-montserrat border-b-2 border-black pb-6 dark:text-gray-100">
         <h1 class="text-center text-2xl font-light py-3">User: {{ authorDetails[0].data.id }}</h1>
         <p class="text-lg pb-3">Karma: {{ authorDetails[0].data.karma }}</p>
         <p class="pb-3">{{ authorDetails[0].data.submitted.length }} articles</p>
@@ -9,8 +9,8 @@
         </div>
         <p v-else>User has not completed 'About' section</p>
     </div>
-    <h3 class="font-montserrat text-xl text-center py-4 underline"><span>{{authorArticlesInfo.length}}</span> articles by {{ authorDetails[0].data.id }}</h3>
-    <div class="flex flex-col items-center md:border-4 border-2 border-black p-3 mx-4 md:mx-8 my-4 md:my-8 shadow-md hover:shadow-2xl rounded-md font-montserrat text-center" v-for="article in authorArticlesInfo" :key="article">
+    <h3 class="font-montserrat text-xl text-center py-4 underline dark:text-gray-200"><span>{{authorArticlesInfo.length}}</span> articles by {{ authorDetails[0].data.id }}</h3>
+    <div class="flex flex-col items-center md:border-4 border-2 border-black dark:border-gray-400 p-3 mx-4 md:mx-8 my-4 md:my-8 shadow-md hover:shadow-2xl rounded-md font-montserrat text-center dark:text-gray-200" v-for="article in authorArticlesInfo" :key="article">
         <div v-if="article.data.dead != true">
             <a :href="article.data.url" target="_blank" class="hover:text-green-900 hover:duration-500 pb-3">{{ article.data.title }}</a>
             <p class="pt-3">Total comments: {{ article.data.descendants }}</p>
