@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-lightgray dark:bg-slate-700 text-center font-montserrat border-b-2 border-black pb-6 dark:text-gray-100">
+    <div class="bg-lightgray dark:bg-slate-700 text-center font-montserrat border-b-2 dark:border-gray-400 border-black pb-6 dark:text-gray-100">
         <h1 class="text-center text-2xl font-light py-3">User: {{ authorDetails[0].data.id }}</h1>
         <p class="text-lg pb-3">Karma: {{ authorDetails[0].data.karma }}</p>
         <p class="pb-3">{{ authorDetails[0].data.submitted.length }} articles</p>
