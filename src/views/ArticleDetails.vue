@@ -1,8 +1,10 @@
 <template>
     <div class="min-h-screen bg-lightgray">
-        <div class="font-montserrat flex flex-col items-center py-4">
+        <div class="font-montserrat flex flex-col items-center py-4 text-center">
             <a :href="articleDetails[0].data.url" target="_blank"><h2 class="text-2xl pb-4 md:py-4 underline text-center px-2 hover:text-green-900 hover:duration-500">{{articleDetails[0].data.title}}</h2></a>
             <p class="text-lg pb-3">Article Author: {{articleDetails[0].data.by}}</p>
+            <p class="text-lg pb-3">Story Score: {{articleDetails[0].data.score}}</p>
+            <p class="text-lg pb-3">Posted on: {{ new Date(articleDetails[0].data.time * 1000) }}</p>
             <p>Article ID: {{ route.params.id }}</p>
             <p class="pb-3">Total Comments: {{articleDetails[0].data.descendants}}</p>
             <p v-if="commentsLoaded.length > 1">View {{commentsLoaded.length}} comments below</p>
@@ -10,8 +12,7 @@
             <p v-else-if="commentsLoaded.length == 0">There are no comments on this article</p>
         </div>
         <div class="border-2 border-black m-6 font-montserrat rounded-lg shadow-md pt-2" v-for="comment in commentsLoaded" :key="comment.data.id">
-            <p class="px-2 md:pt-3 pb-4 font-bold"><span class="underline">Comment Author:</span> {{comment.data.by}}</p>
-            <p v-html="comment.data.text" class="px-2 pb-2"></p>
+            <p class="px-2 md:pt-3 pb-4 font-bold">Comment Author: {{comment.data.by}}  <span class="font-normal text-2xl">|</span> <span v-html="comment.data.text" class="font-normal"></span></p>
         </div>
     </div>
 </template>
@@ -24,7 +25,6 @@ import { useRoute } from 'vue-router'
 let articleDetails: (any)[] = reactive([])
 let commentDetails: (any)[] = reactive([])
 let commentsLoaded: (any)[] = reactive([])
-let commentsFinal: (any)[] = reactive([])
 
 const route = useRoute()
 
