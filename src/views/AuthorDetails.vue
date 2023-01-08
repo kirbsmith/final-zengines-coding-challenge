@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="bg-lightgray dark:bg-slate-700 text-center font-montserrat border-b-2 dark:border-gray-400 border-black pb-6 dark:text-gray-100">
+        <div class="bg-lightgray dark:bg-gray-800 text-center font-montserrat border-b-2 dark:border-gray-400 border-black pb-6 dark:text-gray-100">
             <!-- display author's unique username, karma, contributions (stories + comments) and about section. If the user has not completed an about section, the v-else p will be displayed -->
             <h1 class="text-center text-2xl font-light py-3">User: {{ authorDetails[0].data.id }}</h1>
             <p class="text-lg pb-3">Karma: {{ authorDetails[0].data.karma }}</p>
@@ -27,9 +27,9 @@
         </div>
         <div class="flex gap-4 font-montserrat pt-4 pb-10 place-content-center">
             <!-- create page navigation allowing user to navigate pages and reset their scrollbar and view to the top of the window -->
-            <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32" @click="current--; scrollTop()" :disabled="current === 1">Previous</button>
+            <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32 disabled:opacity-0" @click="current--; scrollTop()" :disabled="current === 1">Previous</button>
             <p class="dark:text-gray-200">{{ current }}</p>
-            <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32" @click="current++; scrollTop()" :disabled="current === Math.ceil(authorArticlesInfo.length/10)">Next</button>
+            <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32 disabled:opacity-0" @click="current++; scrollTop()" :disabled="current === Math.ceil(authorArticlesInfo.length/10)">Next</button>
         </div>
     </div>
 </template>
