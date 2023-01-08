@@ -41,9 +41,12 @@ onMounted(async () => {
     results.map((id : any) => {
         axios.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
         .then((response : any) => {
-            articles.push(response)
+            if (response.data.type == "story") {
+                articles.push(response)
+            }
         })
     })
+    console.log(articles)
 })
 
 
