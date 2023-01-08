@@ -4,7 +4,7 @@
             <a :href="articleDetails[0].data.url" target="_blank"><h2 class="text-2xl pb-4 md:py-4 underline text-center px-2 hover:text-green-900 hover:duration-500">{{articleDetails[0].data.title}}</h2></a>
             <p class="text-lg pb-3">Article Author: {{articleDetails[0].data.by}}</p>
             <p class="text-lg pb-3">Story Score: {{articleDetails[0].data.score}}</p>
-            <p class="text-lg pb-3">Posted on: {{ new Date(articleDetails[0].data.time * 1000) }}</p>
+            <p class="text-lg pb-3">Posted on: Article posted on {{ new Date(articleDetails[0].data.time * 1000).toDateString().split(' ').slice(0, 4).join(' ') }}</p>
             <p>Article ID: {{ route.params.id }}</p>
             <p class="pb-3">Total Comments: {{articleDetails[0].data.descendants}}</p>
             <p v-if="commentsLoaded.length > 1">View {{commentsLoaded.length}} comments below</p>
@@ -28,8 +28,6 @@ let commentsLoaded: (any)[] = reactive([])
 
 const route = useRoute()
 
-
-
 const id = route.params.id
 
 onBeforeMount(async() => {
@@ -49,7 +47,6 @@ onBeforeMount(async() => {
                 commentsLoaded.push(commentResponse)
             }
         })
-        console.log(commentsLoaded)
     }
 })
 
