@@ -13,7 +13,8 @@
             <p class="text-sm md:text-lg py-2 md:pb-2 font-montserrat font-light">Story score: {{ article.data.score }}</p>
             <!-- produce router-links with grammar dependent on the amount of descendants the article has. display the date with information from api response -->
             <router-link v-if="article.data.descendants > 1" :to="{ name : 'ArticleDetails', params: { id: article.data.id}  }" class="px-2 py-1 hover:bg-green-800 hover:duration-300 hover:text-gray-200 font-montserrat font-normal text-md rounded-md underline">View {{ article.data.descendants }} Comments</router-link>
-            <router-link v-if="article.data.descendants == 1" :to="{ name : 'ArticleDetails', params: { id: article.data.id}  }" class="px-2 py-1 hover:bg-green-800 hover:duration-300 hover:text-gray-200 font-montserrat font-normal text-md rounded-md underline">View {{ article.data.descendants }} Comment</router-link>
+            <router-link v-else-if="article.data.descendants == 1" :to="{ name : 'ArticleDetails', params: { id: article.data.id}  }" class="px-2 py-1 hover:bg-green-800 hover:duration-300 hover:text-gray-200 font-montserrat font-normal text-md rounded-md underline">View {{ article.data.descendants }} Comment</router-link>
+            <p v-else-if="article.data.descendants == 0" class="font-montserrat font-normal">No comments on this story</p>
             <p class="text-center text-sm md:text-md py-2 md:py-4 font-montserrat font-light">Article posted on {{ new Date(article.data.time * 1000).toDateString().split(' ').slice(0, 4).join(' ') }}</p>
         </div>
         <div class="flex gap-4 font-montserrat pt-4 pb-10 place-content-center">
