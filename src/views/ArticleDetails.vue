@@ -4,7 +4,7 @@
             <!-- insert a dynamic anchor tag linking to the article -->
             <a :href="articleDetails[0].data.url" target="_blank"><h2 class="text-2xl pb-4 md:py-4 underline text-center px-2 hover:text-green-900 hover:duration-500">{{articleDetails[0].data.title}}</h2></a>
             <!-- pull article author, score, and date article was posted from api response. adjust the time to only show the date -->
-            <p class="text-lg pb-3">Article Author: {{articleDetails[0].data.by}}</p>
+            <router-link :to="{ name: 'AuthorDetails', params: {id: articleDetails[0].data.by}}" class="text-lg py-2 px-3 mb-2 underline hover:bg-green-800 rounded-md hover:text-gray-200 hover:duration-300">Article Author: {{ articleDetails[0].data.by }}</router-link>
             <p class="text-lg pb-3">Story Score: {{articleDetails[0].data.score}}</p>
             <p class="text-lg pb-3">Posted on: Article posted on {{ new Date(articleDetails[0].data.time * 1000).toDateString().split(' ').slice(0, 4).join(' ') }}</p>
             <!-- display the article ID from route params -->

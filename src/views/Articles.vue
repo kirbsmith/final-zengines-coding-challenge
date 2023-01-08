@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-800">    
+    <div class="bg-gray-">    
         <div>
         <h2 class="pt-3 md:pt-8 text-2xl text-center font-montserrat dark:text-gray-200">Current Top Stories</h2>
         </div>
