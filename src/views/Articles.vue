@@ -18,8 +18,8 @@ import axios from "axios"
 
 
 let articles: (any)[] = reactive([])
-
-
+ 
+let date = new Date()
 
 onMounted(async () => {
     const url = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty'

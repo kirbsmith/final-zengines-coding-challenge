@@ -9,10 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ocrv/vue-tailwind-pagination": "^0.0.4",
     "axios": "^1.2.2",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
