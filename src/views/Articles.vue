@@ -10,7 +10,7 @@
         <router-link v-if="article.data.descendants == 1" :to="{ name : 'ArticleDetails', params: { id: article.data.id}  }" class=" hover:underline font-montserrat font-normal text-md">View {{ article.data.descendants }} Comment</router-link>
         <p class="text-center text-sm md:text-md py-2 md:py-4 font-montserrat font-light">Article posted on {{ new Date(article.data.time*1000) }}</p>
     </div>
-    <div class="flex gap-4 font-montserrat pb-2 place-content-center">
+    <div class="flex gap-4 font-montserrat pt-4 pb-10 place-content-center">
         <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32" @click="current--; scrollTop()" :disabled="current === 1">Previous</button>
         <p class="dark:text-gray-200">{{ current }}</p>
         <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32" @click="current++; scrollTop()" :disabled="current === 5">Next</button>
