@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col dark:bg-gray-800">
         <div class="bg-lightgray dark:bg-gray-800 text-center font-montserrat border-b-2 dark:border-gray-400 border-black pb-6 dark:text-gray-100">
             <!-- display author's unique username, karma, contributions (stories + comments) and about section. If the user has not completed an about section, the v-else p will be displayed -->
             <h1 class="text-center text-2xl font-light py-3">User: {{ authorDetails[0].data.id }}</h1>
