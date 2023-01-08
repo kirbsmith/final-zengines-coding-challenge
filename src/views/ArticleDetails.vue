@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, onBeforeMount, defineProps} from 'vue'
+import { reactive, onBeforeMount, defineProps, ref, computed} from 'vue'
 import axios from "axios"
 import { useRoute } from 'vue-router'
 
@@ -27,6 +27,8 @@ let commentDetails: (any)[] = reactive([])
 let commentsLoaded: (any)[] = reactive([])
 
 const route = useRoute()
+
+
 
 const id = route.params.id
 
