@@ -11,9 +11,9 @@
         <p class="text-center text-sm md:text-md py-2 md:py-4 font-montserrat font-light">Article posted on {{ new Date(article.data.time * 1000).toDateString().split(' ').slice(0, 4).join(' ') }}</p>
     </div>
     <div class="flex gap-4 font-montserrat pt-4 pb-10 place-content-center">
-        <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32" @click="current--; scrollTop()" :disabled="current === 1">Previous</button>
-        <p class="dark:text-gray-200">{{ current }}</p>
-        <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32" @click="current++; scrollTop()" :disabled="current === 5">Next</button>
+        <button class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32 disabled:opacity-0" @click="current--; scrollTop()" :disabled="current === 1">Previous</button>
+        <p class="dark:text-gray-200">{{ current }} / 5</p>
+        <button v-if="current != 5" class="dark:border-gray-200 border-gray-800 dark:text-gray-100 border-2 rounded-md px-2 w-32 disabled:opacity-0" @click="current++; scrollTop()" :disabled="current === 5">Next</button>
     </div>
 </template>
 
