@@ -46,7 +46,6 @@ onMounted(async () => {
             }
         })
     })
-    console.log(articles)
 })
 
 
