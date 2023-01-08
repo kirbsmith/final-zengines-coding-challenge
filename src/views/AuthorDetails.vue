@@ -9,10 +9,10 @@
         </div>
         <p v-else>User has not completed 'About' section</p>
     </div>
-    <h3 class="font-montserrat text-xl text-center py-4 underline dark:text-gray-200"><span>{{authorArticlesInfo.length}}</span> Contributions by {{ authorDetails[0].data.id }}</h3>
+    <h3 class="font-montserrat text-xl text-center py-4 underline dark:text-gray-200"><span>{{authorArticlesInfo.length}}</span> Stories by {{ authorDetails[0].data.id }}</h3>
     <div class="flex flex-col items-center md:border-4 border-2 border-black dark:border-gray-400 p-3 mx-4 md:mx-8 my-4 md:my-8 shadow-md hover:shadow-2xl rounded-md font-montserrat text-center dark:text-gray-200" v-for="article in authorArticlesInfo" :key="article">
         <div v-if="article.data.dead != true">
-            <a :href="article.data.url" target="_blank" class="hover:text-green-900 hover:duration-500 pb-3">{{ article.data.title }}</a>
+            <a :href="article.data.url" target="_blank" class="hover:text-green-600 hover:duration-500 pb-3">{{ article.data.title }}</a>
             <p v-if="article.data.descendants >= 1" class="pt-3">Total comments: {{ article.data.descendants }}</p>
             <p v-else class="pt-3">No comments on this article</p>
             <p class="text-sm pt-3">Posted on {{ new Date(article.data.time * 1000) }}</p>

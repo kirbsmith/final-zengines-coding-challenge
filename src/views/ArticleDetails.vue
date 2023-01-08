@@ -45,10 +45,11 @@ onBeforeMount(async() => {
         const commentResponse = await axios.get(url + commentDetails[0][i] + '.json?print=pretty')
         .then((commentResponse : any) => {
             const exists = commentsLoaded.findIndex(el => el.data.id === commentResponse.data.id) > -1
-            if (!exists){
+            if (!exists && commentResponse.data.deleted != true && commentResponse.data.dead != true){
                 commentsLoaded.push(commentResponse)
             }
         })
+        console.log(commentsLoaded)
     }
 })
 
