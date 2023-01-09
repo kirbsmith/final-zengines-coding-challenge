@@ -1,3 +1,5 @@
+Click [here](https://zengineschallengekirby.netlify.app/) to see my website for this challenge
+
 # Zengines Hacker News
 
 Vue 2 had a couple of [Hacker News clones](https://github.com/vuejs/vue-hackernews-2.0) to get people comfortable with the framework. Those clones haven't been duplicated in Vue 3 so your challenge is to create one. We're not looking for a feature-complete version of Hacker News. Instead, we'd like a simple UI that does the following:
